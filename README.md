@@ -18,3 +18,9 @@ Make sure that you have the following installed:
  `docker compose up --build`
 
  ### Go ahead a nd add a product (note that the price field only takes a numeric input)
+
+## Docker Images Screenshots
+
+![alt text](https://github.com/SimonOkello/yolo/blob/master/yolo-backend.png?raw=true)
+
+![alt text](https://github.com/SimonOkello/yolo/blob/master/yolo-client.png?raw=true)
