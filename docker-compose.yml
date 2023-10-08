@@ -19,7 +19,6 @@ services:
     volumes:
       - ./backend:/app/backend/
     environment:
-      # MONGO_URI: mongodb://mongo:27017/yolomy
       MONGO_URI: mongodb://mongo:27017/yolomy
 
     depends_on:
