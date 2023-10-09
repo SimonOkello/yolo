@@ -11,13 +11,13 @@ Make sure that you have the following installed:
 ### Clone the repository
 `git clone https://github.com/SimonOkello/yolo.git`
 
-### Change into the folder
+### Change into the `yolo` folder
 `cd yolo`
 
 ### Run the app 
  `docker compose up --build`
 
- ### Go ahead a nd add a product (note that the price field only takes a numeric input)
+ ### Go ahead and add a product (note that the price field only takes a numeric input)
 
 ## Docker Images Screenshots
 
