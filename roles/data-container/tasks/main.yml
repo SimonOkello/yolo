@@ -1,2 +1,9 @@
 ---
-# tasks file for roles/data-container
+- name: Create BusyBox Data Container
+  docker_container:
+    name: busybox-data-container
+    image: busybox
+    state: started
+    tty: true
+    volumes:
+      - /data # Mount an empty volume to /data in the busybox container

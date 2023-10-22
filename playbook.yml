@@ -6,7 +6,7 @@
     - docker-installation
     - repo-clone
     - network-setup
+    - data-container
     - database-setup
     - backend-deploy
     - frontend-deploy
-    - data-container
