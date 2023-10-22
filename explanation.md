@@ -1,4 +1,4 @@
-## YOLO Project Implementation
+## YOLO Application Ansible & Vagrant Implementation
 
 #### Choice of the Base Images
 - I used `node:16-alpine` as the base image bacause of its lightweight and small footprint features compared to other images.
