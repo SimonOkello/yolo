@@ -1,7 +1,8 @@
 ---
 - name: Build yolo backend docker image
   docker_image:
-    name: yolo-backend
-    path: '{{playbook_dir}}/backend'
-    dockerfile: '{{playbook_dir}}/backend/Dockerfile'
+    name: simonokello/yolo-backend:1.0.0
+    source: build
+    build:
+      path: '{{playbook_dir}}/backend'
   register: backend_image
