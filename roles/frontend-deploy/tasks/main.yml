@@ -1,2 +1,25 @@
 ---
-# tasks file for roles/frontend-deploy
+- name: Build yolo client docker image
+  docker_image:
+    name: simonokello/yolo-client:1.0.0
+    source: build
+    build:
+      path: '{{playbook_dir}}/client'
+  register: client_image
+
+- name: Run yolo client docker container
+  docker_container:
+    name: yolo-client-container
+    image: simonokello/yolo-client:1.0.0
+    state: started
+    volumes:
+      - ./client:/app/client/
+      - ./client:/data/client # also map to the data container
+    ports:
+      - '3000:3000'
+    networks:
+      - name: yolo_network
+    network_mode: bridge
+    env:
+      - CHOKIDAR_USEPOLLING: true
+    # stdin_open: true

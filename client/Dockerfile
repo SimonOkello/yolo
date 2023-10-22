@@ -1,4 +1,4 @@
-FROM node:13-alpine
+FROM node:16-alpine
 
 LABEL maintainer="Simon Okello<simon.okello@studentmoringaschool.com>"
 
