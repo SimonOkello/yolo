@@ -2,7 +2,7 @@
 ## Prerequisites
 Make sure that you have the following installed:
 - [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
-- [Vagrant Ubuntu](https://app.vagrantup.com/bento/boxes/ubuntu-22.04)
+- [Ubuntu 20.04 Vagrant Box](https://app.vagrantup.com/geerlingguy/boxes/ubuntu2004)
 
 ## Setting up Vagrant
 - Use this [link](https://developer.hashicorp.com/vagrant/downloads) to install install vagrant to your local machine. 
