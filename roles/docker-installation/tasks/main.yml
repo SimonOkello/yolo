@@ -19,6 +19,6 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
-    update_cache: yes
+    update_cache: true
 - name: add userpermissions
   shell: 'usermod -aG docker vagrant'

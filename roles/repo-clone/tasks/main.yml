@@ -3,5 +3,6 @@
   git:
     repo: https://github.com/SimonOkello/yolo.git
     dest: '{{playbook_dir}}'
-    single_branch: yes
+    single_branch: true
     version: week6-ip3
+    update: true
