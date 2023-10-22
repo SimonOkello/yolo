@@ -2,3 +2,6 @@ mongo-data
 mongo-data/
 .vagrant/
 .vscode/
+.vscode
+.vscode/*
+.vscode/*.json
