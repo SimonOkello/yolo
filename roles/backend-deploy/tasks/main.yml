@@ -6,7 +6,8 @@
     build:
       path: '{{playbook_dir}}/backend'
   register: backend_image
-
+  tags:
+    - backend
 - name: Run yolo backend docker container
   docker_container:
     name: yolo-backend-container
@@ -21,3 +22,5 @@
       - name: yolo_network
     env:
       MONGO_URI: 'mongodb://yolo-database-container:27017/yolomy'
+  tags:
+    - backend

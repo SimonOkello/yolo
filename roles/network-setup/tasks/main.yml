@@ -4,3 +4,5 @@
     name: yolo_network
     state: present
     attachable: true
+  tags:
+    - networking

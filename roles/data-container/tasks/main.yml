@@ -7,3 +7,6 @@
     tty: true
     volumes:
       - /data # Mount an empty volume to /data in the busybox container
+
+  tags:
+    - storage

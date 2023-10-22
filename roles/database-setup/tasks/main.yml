@@ -10,3 +10,5 @@
       - ./mongo-data:/data/db
     networks:
       - name: yolo_network
+  tags:
+    - database

@@ -6,6 +6,8 @@
     build:
       path: '{{playbook_dir}}/client'
   register: client_image
+  tags:
+    - frontend
 
 - name: Run yolo client docker container
   docker_container:
@@ -24,3 +26,5 @@
       CHOKIDAR_USEPOLLING: 'true'
       stdin_open: 'true'
     tty: true
+  tags:
+    - frontend

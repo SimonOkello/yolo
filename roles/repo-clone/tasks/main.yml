@@ -6,3 +6,5 @@
     single_branch: true
     version: week6-ip3
     update: true
+  tags:
+    - clone
