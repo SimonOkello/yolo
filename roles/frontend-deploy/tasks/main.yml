@@ -21,5 +21,5 @@
       - name: yolo_network
     network_mode: bridge
     env:
-      - CHOKIDAR_USEPOLLING: true
-    # stdin_open: true
+      - CHOKIDAR_USEPOLLING: 'true'
+      - stdin_open: 'true'
