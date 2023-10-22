@@ -1,26 +1,42 @@
 ---
-- name: Build yolo backend docker image
-  docker_image:
-    name: simonokello/yolo-backend:1.0.0
-    source: build
-    build:
-      path: '{{playbook_dir}}/backend'
-  register: backend_image
-  tags:
-    - backend
-- name: Run yolo backend docker container
-  docker_container:
-    name: yolo-backend-container
-    image: simonokello/yolo-backend:1.0.0
-    state: started
-    volumes:
-      - ./backend:/app/backend/
-      - ./backend:/data/backend # also map to the data container
-    ports:
-      - '5000:5000'
-    networks:
-      - name: yolo_network
-    env:
-      MONGO_URI: 'mongodb://yolo-database-container:27017/yolomy'
-  tags:
-    - backend
+- block:
+    - name: Ensure backend  folder exists.
+      stat:
+        path: '{{playbook_dir}}/backend'
+        register: backend_folder
+
+    - name: Print a debug message
+      debug:
+      msg: 'Path exists and is a directory'
+
+    - name: Build yolo backend docker image
+      docker_image:
+        name: simonokello/yolo-backend:1.0.0
+        source: build
+        build:
+          path: '{{playbook_dir}}/backend'
+      register: backend_image
+      tags:
+        - backend
+    - name: Run yolo backend docker container
+      docker_container:
+        name: yolo-backend-container
+        image: simonokello/yolo-backend:1.0.0
+        state: started
+        volumes:
+          - ./backend:/app/backend/
+          - ./backend:/data/backend # also map to the data container
+        ports:
+          - '5000:5000'
+        networks:
+          - name: yolo_network
+        env:
+          MONGO_URI: 'mongodb://yolo-database-container:27017/yolomy'
+      tags:
+        - backend
+
+  when: backend_folder.stat.isdir is defined and backend_folder.stat.isdir
+  rescue:
+    - name: Handle error during backend dockerization setup
+      debug:
+        msg: 'Backend dockerization setup failed. Please check the logs.'

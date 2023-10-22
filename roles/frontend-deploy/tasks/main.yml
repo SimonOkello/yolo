@@ -1,30 +1,41 @@
 ---
-- name: Build yolo client docker image
-  docker_image:
-    name: simonokello/yolo-client:1.0.0
-    source: build
-    build:
-      path: '{{playbook_dir}}/client'
-  register: client_image
-  tags:
-    - frontend
+- block:
+    - name: Ensure client  folder exists.
+      stat:
+        path: '{{playbook_dir}}/client'
+        register: client_folder
 
-- name: Run yolo client docker container
-  docker_container:
-    name: yolo-client-container
-    image: simonokello/yolo-client:1.0.0
-    state: started
-    volumes:
-      - ./client:/app/client/
-      - ./client:/data/client # also map to the data container
-    ports:
-      - '3000:3000'
-    networks:
-      - name: yolo_network
-    network_mode: bridge
-    env:
-      CHOKIDAR_USEPOLLING: 'true'
-      stdin_open: 'true'
-    tty: true
-  tags:
-    - frontend
+    - name: Build yolo client docker image
+      docker_image:
+        name: simonokello/yolo-client:1.0.0
+        source: build
+        build:
+          path: '{{playbook_dir}}/client'
+      register: client_image
+      tags:
+        - frontend
+
+    - name: Run yolo client docker container
+      docker_container:
+        name: yolo-client-container
+        image: simonokello/yolo-client:1.0.0
+        state: started
+        volumes:
+          - ./client:/app/client/
+          - ./client:/data/client # also map to the data container
+        ports:
+          - '3000:3000'
+        networks:
+          - name: yolo_network
+        network_mode: bridge
+        env:
+          CHOKIDAR_USEPOLLING: 'true'
+          stdin_open: 'true'
+        tty: true
+      tags:
+        - frontend
+  when: client_folder.stat.isdir is defined and client_folder.stat.isdir
+  rescue:
+    - name: Handle error during client dockerization setup
+      debug:
+        msg: 'Client dockerization setup failed. Please check the logs.'

@@ -12,3 +12,4 @@
       - name: yolo_network
   tags:
     - database
+    - backend
