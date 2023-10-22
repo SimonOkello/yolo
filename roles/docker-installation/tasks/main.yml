@@ -3,6 +3,7 @@
 - block:
     - name: install prerequisites
       apt:
+        update_cache: true
         name:
           - apt-transport-https
           - ca-certificates
