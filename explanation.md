@@ -1,12 +1,31 @@
 ## YOLO Project Implementation
 
 #### Choice of the Base Images
-- I used ```node:13-alpine``` as the base image bacause of its lightweight and small footprint features compared to other images.
-- I also used ```mongo:jammy``` image for the database and it size is smaller compared to the ```:latest``` tag 
-- For Ansible box, I used ```bento/ubuntu-22.04``` because I had already downloaded it in the previous class presentation that I had.
+- I used `node:13-alpine` as the base image bacause of its lightweight and small footprint features compared to other images.
+- I also used `mongo:jammy` image for the database and it size is smaller compared to the `:latest` tag 
+
 
 #### Dockerfile
 - I had to create separate ```Dockerfile``` for each container since they have different package requirements and ports.
+
+#### Vagrant
+- After installing vagrant I added ubuntu 20.04 box:
+
+```vagrant box add geerlingguy/ubuntu2004```
+- I initialized the vagrant file which created `Vagrantfile`
+- I set vagrant privision for ansible:
+  
+   ```
+   config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+    end
+    ```
+
+- I forwarded port 3000 of the client to provide public access to VM to server client app.
+
+    ```
+    config.vm.network "forwarded_port", guest: 3000, host: 3000
+    ```
 
 
 #### Git workflow

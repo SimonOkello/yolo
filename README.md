@@ -9,7 +9,11 @@ Make sure that you have the following installed:
 - Once you have installed vagrant, verify that it is intalled by running this command:
   
   ```vagrant --version```
-  You should expect something like ```Vagrant 2.4.0```
+  You should expect something like 
+  
+  ```
+  Vagrant 2.4.0
+  ```
 
 - If vagrant is successfully installed, proceed to install ubuntu 20.04:
   
