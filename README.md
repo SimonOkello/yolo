@@ -14,13 +14,14 @@ Make sure that you have the following installed:
 ### Change into the `yolo` folder
 `cd yolo`
 
-### Run the app 
- `docker compose up --build`
+### Checkout to `week6-ip3` branch
+`git checkout week6-ip3`
+
+
+
+
+### Automate deployment of the app using Ansible and Vagrant
+ `vagrant up --provision`
 
  ### Go ahead and add a product (note that the price field only takes a numeric input)
 
-## Docker Images Screenshots
-
-![alt text](https://github.com/SimonOkello/yolo/blob/master/yolo-backend.png?raw=true)
-
-![alt text](https://github.com/SimonOkello/yolo/blob/master/yolo-client.png?raw=true)
