@@ -1,2 +1,12 @@
 ---
-# tasks file for roles/database-setup
+- name: Run MongoDB Container
+  docker_container:
+    name: yolo-database
+    image: mongo:jammy
+    state: started
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./mongo-data:/data/db
+    networks:
+      - name: yolo_network
