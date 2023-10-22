@@ -23,3 +23,4 @@
     env:
       CHOKIDAR_USEPOLLING: 'true'
       stdin_open: 'true'
+    tty: true

@@ -19,6 +19,5 @@
       - '5000:5000'
     networks:
       - name: yolo_network
-    network_mode: bridge
     env:
-      MONGO_URI: mongodb://yolo-database-container:27017/yolomy
+      MONGO_URI: 'mongodb://yolo-database-container:27017/yolomy'

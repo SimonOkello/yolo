@@ -4,6 +4,17 @@ Make sure that you have the following installed:
 - [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 - [Vagrant Ubuntu](https://app.vagrantup.com/bento/boxes/ubuntu-22.04)
 
+## Setup Vagrant
+- Use this [link](https://developer.hashicorp.com/vagrant/downloads) to install install vagrant to your local machine. 
+- Once you have installed vagrant, verify that it is intalled by running this command:
+  
+  ```vagrant --version```
+  You should expect something like ```Vagrant 2.4.0```
+
+- If vagrant is successfully installed, proceed to install ubuntu 20.04:
+  
+  ``` vagrant box add geerlingguy/ubuntu2004```
+
 ### Clone the repository
 `git clone https://github.com/SimonOkello/yolo.git`
 
@@ -18,6 +29,10 @@ Make sure that you have the following installed:
 
 ### Automate deployment of the app using Ansible and Vagrant
  `vagrant up --provision`
+
+### Access the Yolomy Ecommerce on your browser
+
+`http://localhost:3000/`
 
  ### Go ahead and add a product (note that the price field only takes a numeric input)
 
