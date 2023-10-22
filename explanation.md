@@ -12,7 +12,7 @@
 - Vagrant setup
   - After installing vagrant I added ubuntu 20.04 box:
 
-      ```vagrant box add geerlingguy/ubuntu2004```
+      ```vagrant box add bento/ubuntu-22.04```
   - I initialized the vagrant file which created `Vagrantfile`
   - I set vagrant privision for ansible:
     

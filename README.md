@@ -2,7 +2,7 @@
 ## Prerequisites
 Make sure that you have the following installed:
 - [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
-- [Ubuntu 20.04 Vagrant Box](https://app.vagrantup.com/geerlingguy/boxes/ubuntu2004)
+- [Ubuntu 22.04 Vagrant Box](https://app.vagrantup.com/bento/boxes/ubuntu-22.04)
 
 ## Setting up Vagrant
 - Use this [link](https://developer.hashicorp.com/vagrant/downloads) to install install vagrant to your local machine. 
@@ -15,13 +15,13 @@ Make sure that you have the following installed:
   
   ```Vagrant 2.4.0```
 
-- If vagrant is successfully installed, proceed to install ubuntu 20.04:
+- If vagrant is successfully installed, proceed to install ubuntu 22.04:
   
   ``` 
-  vagrant box add geerlingguy/ubuntu2004
+  vagrant box add bento/ubuntu-22.04
   ```
 
-- After a successful ubuntu 20.04 installation, you can now proceed with the next steps.
+- After a successful ubuntu 22.04 installation, you can now proceed with the next steps.
 
 ## Running the application
 
