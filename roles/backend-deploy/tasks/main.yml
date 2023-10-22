@@ -1,2 +1,7 @@
 ---
-# tasks file for roles/backend-deploy
+- name: Build yolo backend docker image
+  docker_image:
+    name: yolo-backend
+    path: '{{playbook_dir}}/backend'
+    dockerfile: '{{playbook_dir}}/backend/Dockerfile'
+  register: backend_image
