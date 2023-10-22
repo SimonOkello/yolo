@@ -5,10 +5,6 @@
         path: '{{playbook_dir}}/backend'
         register: backend_folder
 
-    - name: Print a debug message
-      debug:
-      msg: 'Path exists and is a directory'
-
     - name: Build yolo backend docker image
       docker_image:
         name: simonokello/yolo-backend:1.0.0
