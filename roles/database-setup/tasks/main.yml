@@ -1,7 +1,7 @@
 ---
 - name: Run MongoDB Container
   docker_container:
-    name: yolo-database
+    name: yolo-database-container
     image: mongo:jammy
     state: started
     ports:
