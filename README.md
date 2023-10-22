@@ -1,5 +1,5 @@
 # Yolo
-## Requirements
+## Prerequisites
 Make sure that you have the following installed:
 - [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 - [Vagrant Ubuntu](https://app.vagrantup.com/bento/boxes/ubuntu-22.04)
@@ -15,24 +15,26 @@ Make sure that you have the following installed:
   
   ``` vagrant box add geerlingguy/ubuntu2004```
 
-### Clone the repository
+## Running the application
+
+#### Clone the repository
 `git clone https://github.com/SimonOkello/yolo.git`
 
-### Change into the `yolo` folder
+#### Change into the `yolo` folder
 `cd yolo`
 
-### Checkout to `week6-ip3` branch
+#### Checkout to `week6-ip3` branch
 `git checkout week6-ip3`
 
 
 
 
-### Automate deployment of the app using Ansible and Vagrant
+#### Automate deployment of the app using Ansible and Vagrant
  `vagrant up --provision`
 
-### Access the Yolomy Ecommerce on your browser
+#### Access the Yolomy Ecommerce on your browser
 
 `http://localhost:3000/`
 
- ### Go ahead and add a product (note that the price field only takes a numeric input)
+#### Go ahead and add a product (note that the price field only takes a numeric input)
 
