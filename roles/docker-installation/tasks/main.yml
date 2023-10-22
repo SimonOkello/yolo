@@ -1,9 +1,10 @@
 ---
 # Install and configure docker on Debian/Ubuntu hosts.
 - block:
+
     - name: install prerequisites
       apt:
-        update_cache: true
+        update_cache: yes
         name:
           - apt-transport-https
           - ca-certificates
@@ -24,11 +25,11 @@
         - docker
     - name: install docker
       apt:
+        update_cache: yes
         name:
           - docker-ce
           - docker-ce-cli
           - containerd.io
-        update_cache: true
       tags:
         - docker
     - name: add userpermissions
