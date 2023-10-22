@@ -1,10 +1,10 @@
-# Yolo
+# Yolomy E-commerce Application: Deployment using Ansible & Vagrant
 ## Prerequisites
 Make sure that you have the following installed:
 - [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 - [Vagrant Ubuntu](https://app.vagrantup.com/bento/boxes/ubuntu-22.04)
 
-## Setup Vagrant
+## Setting up Vagrant
 - Use this [link](https://developer.hashicorp.com/vagrant/downloads) to install install vagrant to your local machine. 
 - Once you have installed vagrant, verify that it is intalled by running this command:
   
@@ -14,6 +14,8 @@ Make sure that you have the following installed:
 - If vagrant is successfully installed, proceed to install ubuntu 20.04:
   
   ``` vagrant box add geerlingguy/ubuntu2004```
+
+- After a successful ubuntu 20.04 installation, you can now proceed with the next steps.
 
 ## Running the application
 
@@ -25,9 +27,6 @@ Make sure that you have the following installed:
 
 #### Checkout to `week6-ip3` branch
 `git checkout week6-ip3`
-
-
-
 
 #### Automate deployment of the app using Ansible and Vagrant
  `vagrant up --provision`
