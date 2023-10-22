@@ -6,3 +6,6 @@
     - docker-installation
     - repo-clone
     - network-setup
+    - database-setup
+    - backend-deploy
+    - frontend-deploy
