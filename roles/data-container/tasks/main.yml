@@ -1,7 +1,7 @@
 ---
 - name: Create BusyBox Data Container
   docker_container:
-    name: yolo-data-container
+    name: '{{data_container_name}}'
     image: busybox
     state: started
     tty: true

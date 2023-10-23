@@ -1,2 +1,3 @@
 ---
 # vars file for roles/data-container
+data_container_name: yolo-data-container

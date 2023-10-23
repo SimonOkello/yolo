@@ -1,7 +1,7 @@
 ---
 - name: Create Custom Bridge Network
   docker_network:
-    name: yolo_network
+    name: '{{app_network_name}}'
     state: present
     attachable: true
   tags:

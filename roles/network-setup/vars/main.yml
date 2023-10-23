@@ -1,2 +1,3 @@
 ---
 # vars file for roles/network-setup
+app_network_name: yolo_network

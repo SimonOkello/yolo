@@ -5,7 +5,7 @@
     repo: '{{app_repo}}'
     dest: '{{playbook_dir}}'
     single_branch: true
-    version: week6-ip3
+    version: '{{branch_name}}'
     update: true
   tags:
     - clone
