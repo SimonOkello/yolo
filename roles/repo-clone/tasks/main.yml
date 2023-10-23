@@ -1,7 +1,7 @@
 ---
 - name: Clone yolo repo week6-ip3 branch
   git:
-    repo: '{{app_repo}}'
+    repo: https://github.com/SimonOkello/yolo.git
     dest: '{{playbook_dir}}'
     single_branch: true
     version: week6-ip3
