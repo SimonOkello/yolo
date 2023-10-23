@@ -7,7 +7,7 @@
 
     - name: Build yolo backend docker image
       docker_image:
-        name: simonokello/yolo-backend:1.0.0
+        name: '{{backend_image_name}}'
         source: build
         build:
           path: '{{playbook_dir}}/backend'
@@ -16,22 +16,22 @@
         - backend
     - name: Run yolo backend docker container
       docker_container:
-        name: yolo-backend-container
-        image: simonokello/yolo-backend:1.0.0
+        name: '{{backend_container_name}}'
+        image: '{{backend_image_name}}'
         state: started
         volumes:
           - ./backend:/app/backend/
           - ./backend:/data/backend # also map to the data container
         ports:
-          - '5000:5000'
+          - '{{backend_port}}'
         networks:
           - name: yolo_network
         env:
-          MONGO_URI: 'mongodb://yolo-database-container:27017/yolomy'
+          MONGO_URI: '{{db_url}}'
       tags:
         - backend
 
-  when: backend_folder.stat.isdir is defined and backend_folder.stat.isdir
+  when: backend_folder.stat.exists == true and backend_folder.stat.isdir
   rescue:
     - name: Handle error during backend dockerization setup
       debug:

@@ -1,16 +1,7 @@
 ---
 - name: Ansible playbook to dockerize and run yolo e-commerce app using ansible
   hosts: all
-  become: true
-  vars:
-    # Define variables here
-    backend_image_name: your_backend_image_name
-    frontend_image_name: your_frontend_image_name
-    backend_port: your_backend_port
-    frontend_port: your_frontend_port
-    data_container_name: your_data_container_name
-    mongodb_container_name: your_mongodb_container_name
-    
+  become: true    
   roles:
     - docker-installation
     - repo-clone
