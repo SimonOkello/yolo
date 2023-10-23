@@ -31,7 +31,7 @@
       tags:
         - backend
 
-  when: backend_folder.stat.exists == true and backend_folder.stat.isdir
+  when: backend_folder.stat.isdir is defined and backend_folder.stat.isdir
   rescue:
     - name: Handle error during backend dockerization setup
       debug:
