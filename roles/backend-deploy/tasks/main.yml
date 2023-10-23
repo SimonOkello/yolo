@@ -3,7 +3,7 @@
     - name: Ensure backend  folder exists.
       stat:
         path: '{{playbook_dir}}/backend'
-        register: backend_folder
+      register: backend_folder
 
     - name: Build yolo backend docker image
       docker_image:
@@ -31,8 +31,7 @@
       tags:
         - backend
 
-  # when: backend_folder.stat.isdir is defined and backend_folder.stat.isdir
-  when: ansible_os_family == 'Debian'
+  when: backend_folder.stat.isdir is defined and backend_folder.stat.isdir
   rescue:
     - name: Handle error during backend dockerization setup
       debug:
