@@ -21,7 +21,7 @@
         image: '{{client_image_name}}'
         state: started
         volumes_from:
-          - '{{data_container_name}}/client'
+          - '{{data_container_name}}'
         ports:
           - '{{frontend_port}}'
         networks:
