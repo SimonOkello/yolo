@@ -1,8 +1,23 @@
 ---
+- name: Update package repositories (if necessary)
+  apt:
+    update_cache: yes
+
+- name: Install Git (if not already installed)
+  apt:
+    name: git
+    state: present
+
+- name: Create the destination directory if it doesn't exist
+  file:
+    path: /apps/demo
+    state: directory
+  ignore_errors: true
+
 - name: Clone yolo repo week6-ip3 branch
   git:
     repo: https://github.com/SimonOkello/yolo.git
-    dest: '{{playbook_dir}}'
+    dest: '/apps/demo'
     single_branch: true
     version: week6-ip3
     update: true
