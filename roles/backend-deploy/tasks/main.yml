@@ -31,7 +31,8 @@
       tags:
         - backend
 
-  when: backend_folder.stat.isdir is defined and backend_folder.stat.isdir
+  # when: backend_folder.stat.isdir is defined and backend_folder.stat.isdir
+  when: ansible_os_family == 'Debian'
   rescue:
     - name: Handle error during backend dockerization setup
       debug:
