@@ -3,7 +3,7 @@
     - name: Ensure client  folder exists.
       stat:
         path: '{{playbook_dir}}/client'
-        register: client_folder
+      register: client_folder
 
     - name: Build yolo client docker image
       docker_image:
