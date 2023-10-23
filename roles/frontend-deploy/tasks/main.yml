@@ -1,28 +1,27 @@
 ---
 - block:
-    - name: Ensure client  folder exists.
-      stat:
-        path: '{{playbook_dir}}/client'
-      register: client_folder
+    # - name: Ensure client  folder exists.
+    #   stat:
+    #     path: '{{playbook_dir}}/client'
+    #   register: client_folder
 
-    - name: Build yolo client docker image
-      docker_image:
-        name: '{{client_image_name}}'
-        source: build
-        build:
-          path: '{{playbook_dir}}/client'
-      register: client_image
-      tags:
-        - frontend
+    # - name: Build yolo client docker image
+    #   docker_image:
+    #     name: '{{client_image_name}}'
+    #     source: build
+    #     build:
+    #       path: '{{playbook_dir}}/client'
+    #   register: client_image
+    #   tags:
+    #     - frontend
 
     - name: Run yolo client docker container
       docker_container:
         name: '{{client_container_name}}'
         image: '{{client_image_name}}'
         state: started
-        volumes:
-          - ./client:/app/client/
-          - ./client:/data/client # also map to the data container
+        volumes_from:
+          - '{{data_container_name}}/client'
         ports:
           - '{{frontend_port}}'
         networks:
@@ -34,7 +33,7 @@
         tty: true
       tags:
         - frontend
-  when: client_folder.stat.isdir is defined and client_folder.stat.isdir
+  when: ansible_os_family == 'Debian'
   rescue:
     - name: Handle error during client dockerization setup
       debug:
