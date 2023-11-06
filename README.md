@@ -7,15 +7,14 @@
 
 
 # Steps
-
-- [x] Create a folder named `manifests`  and kubernetes deployments files there:
-
+- [x] Clone the repository
     ```
-      backend-deployment.yml
-      client-deployment.yml
-      persistent-volume-claim.yml
-      mongo-deployment.yml
-      mongo-config.yml
+    git clone https://github.com/SimonOkello/yolo.git
+    ```
+
+- [x] Checkout to `week8-ip4` branch
+    ```
+    git checkout week8-ip4
     ```
 - [x] Create a kubernetes cluster on GKE.
 - [x] Setup Connection to created GKE cluster in with your local machine or cloud shell.
