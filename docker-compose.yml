@@ -11,7 +11,7 @@ services:
     networks:
       - yolo_network
   backend:
-    image: simonokello/yolo-backend:1.0.0
+    image: simonokello/yolo-backend:v1.0
     build:
       context: ./backend
     container_name: yolo-backend
@@ -29,7 +29,7 @@ services:
       - yolo_network
 
   client:
-    image: simonokello/yolo-client:1.0.0
+    image: simonokello/yolo-client:v1.0
     build:
       context: ./client
     container_name: yolo-client
