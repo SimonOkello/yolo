@@ -14,7 +14,7 @@ spec:
         app: backend
     spec:
       containers:
-        - name: backend
+        - name: backend-container
           image: simonokello/yolo-backend:v1.0
           imagePullPolicy: Always
           ports:
