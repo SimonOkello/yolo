@@ -8,7 +8,6 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: ecommerce.test
     - http:
         paths:
           - path: /
