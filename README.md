@@ -1,56 +1,44 @@
-# Yolomy E-commerce Application: Deployment using Ansible & Vagrant
-## Prerequisites
-Make sure that you have the following installed:
-- [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
-- [Ubuntu 22.04 Vagrant Box](https://app.vagrantup.com/bento/boxes/ubuntu-22.04)
-
-## Setting up Vagrant
-- Use this [link](https://developer.hashicorp.com/vagrant/downloads) to install install vagrant to your local machine. 
-- Once you have installed vagrant, verify that it is intalled by running this command:
-  
-  ```
-  vagrant --version
-  ```
-  You should expect something like 
-  
-  ```Vagrant 2.4.0```
-
-- If vagrant is successfully installed, proceed to install ubuntu 22.04:
-  
-  ``` 
-  vagrant box add bento/ubuntu-22.04
-  ```
-
-- After a successful ubuntu 22.04 installation, you can now proceed with the next steps.
-
-## Running the application
-
-#### Clone the repository
-```
-git clone https://github.com/SimonOkello/yolo.git
-```
-
-#### Change into the `yolo` folder
-```
-cd yolo
-```
-
-#### Checkout to `week6-ip3` branch
-```
-git checkout week6-ip3
-```
+# Deploy Yolo Application to GKE(Google Kubernetes Engine) 
+### Tech stack used:
+- Node.js
+- Docker
+- Kubernetes
+- GKE(Google Kubernetes Engine)
 
 
-#### Automate deployment of the app using Ansible and Vagrant
- ```
- vagrant up --provision
- ```
+# Steps
 
-#### Access the Yolomy Ecommerce on your browser
+- [x] Create a folder named `manifests`  and kubernetes deployments files there:
 
-```
-http://localhost:3000/
+    ```
+      backend-deployment.yml
+      client-deployment.yml
+      persistent-volume-claim.yml
+      mongo-deployment.yml
+      mongo-config.yml
+    ```
+- [x] Create a kubernetes cluster on GKE.
+- [x] Setup Connection to created GKE cluster in with your local machine or cloud shell.
+    ```sh
+    gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
+    ```
+- [x] Apply manifest files to create deployment.
+    ```sh
+    kubectl apply -f manifests
+    ```
+- [x] Check status of all deployments.
+    ```sh
+    kubectl get all
+    ```
+- [x] Check status of service.
+    ```sh
+    kubectl get svc
+    ```
+- [x] Check the external IP of the service in the browser.
+
+### Cleanup
+```sh
+kubectl delete -f manifests
 ```
 
-#### Go ahead and add a product (note that the price field only takes a numeric input)
-
+> Delete your GKE Cluster from GCP Console.
