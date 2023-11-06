@@ -1,9 +1,10 @@
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: mongo-deployment
+  name: mongodb-statefulset
 spec:
+  serviceName: mongo
   replicas: 1
   selector:
     matchLabels:
@@ -13,20 +14,21 @@ spec:
       labels:
         app: mongo
     spec:
-      volumes:
-        - name: mongo-storage
-          persistentVolumeClaim:
-            claimName: database-persistent-volume-claim
       containers:
         - name: mongodb
           image: mongo
-          imagePullPolicy: Always
           ports:
             - containerPort: 27017
           volumeMounts:
             - name: mongo-storage
               mountPath: /data/db
-              subPath: mongo
+            - name: config
+              mountPath: /etc/mongod.conf
+              subPath: mongodb.conf
+      volumes:
+        - name: mongo-storage
+          persistentVolumeClaim:
+            claimName: database-persistent-volume-claim
 ---
 apiVersion: v1
 kind: Service

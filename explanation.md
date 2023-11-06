@@ -16,8 +16,8 @@
 - `Client Deployment YAML`
   - I created a deployment yaml file for frontend application defining its external service of type `LoadBalancer`
   - The frontend service accepts requests on port 3000 which forwards to the frontend container also running on port 3000
-- `Database Deployment YAML`
-  - I created a deployment yaml file for mongo db defining its external service of type `ClusterIP`
+- `Database StatefulSet YAML`
+  - I created a statefulset yaml file for mongo db defining its service of type `ClusterIP`
   - The mongo db service will utilize its connectivity with other pods within the cluster network to process and manage application data. Mongo db service is accessible via port 27017
 - `Persistent Volume Claim`
   - I created a deployment yaml file for database data persistence.I mapped this on mongo db deployment and a volume.
