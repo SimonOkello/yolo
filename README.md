@@ -3,6 +3,7 @@
 - Node.js
 - Docker
 - Kubernetes
+- Install [GCLI(Google Cloud CLI)](https://cloud.google.com/sdk/docs/install-sdk)
 - GKE(Google Kubernetes Engine)
 
 
@@ -16,10 +17,13 @@
     ```
     git checkout week8-ip4
     ```
-- [x] Create a kubernetes cluster on GKE.
+- [x] After setting up Google SDK CLI,create a kubernetes cluster on GKE.
+    ```
+    gcloud container clusters create week8-ip4 --num-nodes=3
+    ```
 - [x] Setup Connection to created GKE cluster in with your local machine or cloud shell.
     ```sh
-    gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
+    gcloud container clusters get-credentials week8-ip4 --zone us-central1-a --project <PROJECT_ID>
     ```
 - [x] Apply manifest files to create deployment.
     ```sh
