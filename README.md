@@ -25,7 +25,7 @@
     ```sh
     gcloud container clusters get-credentials week8-ip4 --zone us-central1-a --project <PROJECT_ID>
     ```
-- [x] Apply manifest files to create deployment.
+- [x] After cluster has been created,Apply manifest files to create deployment.
     ```sh
     kubectl apply -f manifests
     ```
