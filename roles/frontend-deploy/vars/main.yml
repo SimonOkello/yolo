@@ -1,5 +1,0 @@
----
-# vars file for roles/frontend-deploy
-frontend_port: '3000:3000'
-client_image_name: simonokello/yolo-client:1.0.1
-client_container_name: yolo-client-container

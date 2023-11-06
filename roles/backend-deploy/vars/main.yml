@@ -1,7 +1,0 @@
----
-# vars file for roles/backend-deploy
-db_url: 'mongodb://yolo-database-container:27017/yolomy'
-backend_port: '5000:5000'
-backend_image_name: simonokello/yolo-backend:1.0.1
-backend_container_name: yolo-backend-container
-data_container_name: yolo-data-container
