@@ -25,6 +25,14 @@ spec:
             - name: config
               mountPath: /etc/mongod.conf
               subPath: mongodb.conf
+      volumeClaimTemplates:
+        - metadata:
+            name: database-persistent-volume-claim
+          spec:
+            accessModes: ['ReadWriteOnce']
+            resources:
+              requests:
+                storage: 1Gi
       volumes:
         - name: mongo-storage
           persistentVolumeClaim:
