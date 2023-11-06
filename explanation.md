@@ -21,7 +21,11 @@
   - The mongo db service will utilize its connectivity with other pods within the cluster network to process and manage application data. Mongo db service is accessible via port 27017
 - `Persistent Volume Claim`
   - I created a deployment yaml file for database data persistence.I mapped this on mongo db deployment and a volume.
--  I created cluster `week8-ip4` on Google cloud console
+- I setup [GCLI(Google Cloud CLI)](https://cloud.google.com/sdk/docs/install-sdk)
+-  After setting up Google SDK CLI,create a kubernetes cluster on GKE
+    ```
+    gcloud container clusters create week8-ip4 --num-nodes=3
+    ```
 -  I connected to the cluster:
   
     ```
