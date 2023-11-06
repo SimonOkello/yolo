@@ -39,6 +39,8 @@
     ```
 - [x] Check the external IP of the service in the browser.
 
+## Current setup is running on http://35.223.44.86/
+
 ### Cleanup
 ```sh
 kubectl delete -f manifests
