@@ -11,14 +11,14 @@ spec:
     - http:
         paths:
           - path: /
-            pathType: Prefix
+            pathType: Exact
             backend:
               service:
                 name: client-service
                 port:
                   number: 3000
           - path: /api/
-            pathType: Prefix
+            pathType: Exact
             backend:
               service:
                 name: backend-service
