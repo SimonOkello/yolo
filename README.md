@@ -39,7 +39,7 @@
     ```
 - [x] Check the external IP of the service in the browser.
 
-## Current setup is running on http://34.136.202.61/
+## Current setup is running on http://35.193.154.137/
 
 ### Cleanup
 ```sh
